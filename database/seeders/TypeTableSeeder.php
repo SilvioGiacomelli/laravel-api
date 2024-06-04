@@ -14,7 +14,7 @@ class TypeTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $data = ['TYPE1', 'TYPE2', 'TYPE3', 'TYPE4', 'TYPE5'];
+        $data = ['Front End', 'Back End', 'Full Stack'];
         foreach ($data as $item) {
             $new_item = new Type();
             $new_item->title = $item;
