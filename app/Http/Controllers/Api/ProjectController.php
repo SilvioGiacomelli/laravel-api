@@ -27,4 +27,19 @@ class ProjectController extends Controller
         $types = Type::all();
         return response()->json($types);
     }
+    public function getProjectBySlug($slug)
+    {
+        $project = Project::where('slug', $slug)->with('type', 'technologies')->first();
+        if ($project) {
+            $success = true;
+            if ($project->image) {
+                $project->image = asset('storage/uploads/' . $project->image);
+            } else {
+                $project->image = asset('storage/uploads/noimg.jpg');
+            }
+        } else {
+            $success = false;
+        }
+        return response()->json(compact('success', 'project'));
+    }
 }

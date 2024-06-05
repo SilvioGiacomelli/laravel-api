@@ -10,6 +10,7 @@ class ProjectTechnologiesController extends Controller
 {
     public function index(Project $project)
     {
+        dd($project->technologies);
         return response()->json($project->load('technologies'));
     }
 }
