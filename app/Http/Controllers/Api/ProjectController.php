@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Technology;
 use App\Models\Type;
 use App\Models\ProjectTechnology;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -33,9 +34,9 @@ class ProjectController extends Controller
         if ($project) {
             $success = true;
             if ($project->image) {
-                $project->image = asset('storage/uploads/' . $project->image);
+                $project->image = Storage::url($project->image);
             } else {
-                $project->image = asset('storage/uploads/noimg.jpg');
+                $project->image = Storage::url('uploads/noimg.jpg');
             }
         } else {
             $success = false;
