@@ -7,6 +7,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\Technology;
 use App\Models\Type;
+use App\Models\ProjectTechnology;
 
 class ProjectController extends Controller
 {
