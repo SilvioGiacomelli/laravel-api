@@ -15,7 +15,7 @@ class ProjectTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $data = ['TITLE1', 'TITLE2', 'TITLE3', 'TITLE4', 'TITLE5'];
+        $data = ['TITLE1', 'TITLE2', 'TITLE3', 'TITLE4', 'TITLE6'];
         foreach ($data as $item) {
             $new_item = new Project();
             $new_item->type_id = Type::inRandomOrder()->first()->id;
